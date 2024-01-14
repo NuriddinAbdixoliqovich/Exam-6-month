@@ -5,29 +5,25 @@ import Payment from './payment';
 import Order from './order';
 
 
-export default function Adress({submit}) {
-  const [value, setValue] = useState({
-    fullName: "",
-    lastname: "",
-    region: "",
-    cityname: "",
-    streetname: "",
-    zipname: "",
-    email: "",
-    phonenumber: "",
-    });
+export default function Adress() {
+  // const [value, setValue] = useState({
+  //   fullName: "",
+  //   lastname: "",
+  //   region: "",
+  //   cityname: "",
+  //   streetname: "",
+  //   zipname: "",
+  //   email: "",
+  //   phonenumber: "",
+  //   });
 
    
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({
-    defaultValues:{
-      phonenumber: "+99890"
-    }
-  });
+    formState: errors 
+  } = useForm();
 
 const errorMessage = "This is required field";
 
@@ -36,19 +32,19 @@ const ErrorMessage = ({ error }) => {
 };
 
 
-  const onSubmit = (value) => {
-    console.log("e", value);
-  };
-
+  // const onSubmit = (value) => {
+  //   console.log("e", value);
+  // };
+  
 
   return (
     <>
-        <form onSubmit={handleSubmit(onsubmit)} className="flex">
+        <form onSubmit={handleSubmit(onsubmit)} className="flex gap-16">
         <div>
         <h1 className="mb-5 text-xl font-bold">Billing Address</h1>
           <div className="flex gap-6 pb-6">
             <div className="flex flex-col gap-2">
-              <label for="firstname">First Name <span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="firstname">First Name </label>
               <Input 
                 className={`${errors.firstname?.message && "border-red-500"}`}
                 type="text"
@@ -65,7 +61,7 @@ const ErrorMessage = ({ error }) => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label for="lastname">Last Name <span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="lastname">Last Name</label>
               <Input 
                 className={`${errors.lastname?.message && "border-red-500"}`}
                 type="text"
@@ -85,13 +81,13 @@ const ErrorMessage = ({ error }) => {
 
           <div className="flex gap-6 pb-6">
             <div className="flex flex-col gap-2">
-              <label>Country / Region <span className="text-red-500 text-2xl">*</span></label>
+              <label>Country / Region</label>
               <select
                 name="region"
                 className={`${errors.lastname?.message && "border-red-500"} border border-[#EAEAEA] p-2 rounded-[3px] focus:outline-none focus:border-green-500 w-[350px] h-10 text-sm text-gray-700` }
                 {...register("region", {required: errorMessage})}
                 >
-              <option disabled value="" selected><span className="text-gray-400 text-[12px]">Select a country / region</span></option>
+              {/* <option disabled value="">Select a country / region</option> */}
               <option value="Tashkent">Tashkent</option>
               <option value="Samarkand">Samarkand</option>
               <option value="Khorezm">Khorezm</option>
@@ -101,7 +97,7 @@ const ErrorMessage = ({ error }) => {
               <ErrorMessage error={errors?.region?.message} />
             </div>
             <div className="flex flex-col gap-2">
-              <label for="cityname">Town / City <span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="cityname">Town / City</label>
               <Input 
                 className={`${errors.cityname?.message && "border-red-500"}`}
                 type="text"
@@ -119,7 +115,7 @@ const ErrorMessage = ({ error }) => {
 
           <div className="flex gap-6 pb-6">
             <div className="flex flex-col gap-2">
-              <label for="streetname">Street Address <span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="streetname">Street Address</label>
               <Input 
                 className={`${errors.streetname?.message && "border-red-500"}`}
                 type="text"
@@ -135,7 +131,7 @@ const ErrorMessage = ({ error }) => {
             <div className="flex flex-col gap-2">
               <label></label>
               <Input 
-                className="mt-8"
+                className="mt-6"
                 type="text"
                 name="appartment"
                 placeholder="Appartment, suite, unit, etc. (optional)"
@@ -147,13 +143,13 @@ const ErrorMessage = ({ error }) => {
 
           <div className="flex gap-6 pb-6">
             <div className="flex flex-col gap-2">
-              <label>State <span className="text-red-500 text-2xl">*</span></label>
+              <label>State</label>
               <select
                 className={`${errors.state?.message && "border-red-500"} border border-[#EAEAEA] p-2 rounded-[3px] focus:outline-none focus:border-green-500 w-[350px] h-10 text-sm text-gray-700` }
                 {...register("state", {required: errorMessage})}
 
                 >
-              <option disabled value="" selected><span className="text-gray-400 text-[12px]">Select state</span></option>
+              {/* <option disabled value="Select state"></option> */}
               <option value="Uzbekistan">Uzbekistan</option>
               <option value="Kazakhstan">Kazakhstan</option>
               <option value="Tadjikistan">Tadjikistan</option>
@@ -162,7 +158,7 @@ const ErrorMessage = ({ error }) => {
               <ErrorMessage error={errors?.state?.message} />
             </div>
             <div className="flex flex-col gap-2">
-              <label for="zipname">Zip<span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="zipname">Zip</label>
               <Input 
                 className={`${errors?.zipname?.message && "border-red-500"}`}
                 type="text"
@@ -180,7 +176,7 @@ const ErrorMessage = ({ error }) => {
 
           <div className="flex gap-6 pb-6">
             <div className="flex flex-col gap-2">
-              <label for="email">Email Address<span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="email">Email Address</label>
               <Input
                 className={`${errors?.email?.message && "border-red-500"}`} 
                 type="email"
@@ -193,7 +189,7 @@ const ErrorMessage = ({ error }) => {
               <ErrorMessage error={errors?.email?.message} />
             </div>
             <div className="flex flex-col gap-2">
-              <label for="phonenumber">Phone Number<span className="text-red-500 text-2xl">*</span></label>
+              <label htmlFor="phonenumber">Phone Number</label>
               <Input 
                 className={`${errors?.phonenumber?.message && "border-red-500"}`}
                 type="phonenumber"
@@ -208,7 +204,7 @@ const ErrorMessage = ({ error }) => {
           </div>
           
             <div className="flex flex-col gap-2">
-              <label for="textarea">Order notes (optional)</label>
+              <label htmlFor="textarea">Order notes (optional)</label>
               <textarea 
                 type="text"
                 name="textarea"

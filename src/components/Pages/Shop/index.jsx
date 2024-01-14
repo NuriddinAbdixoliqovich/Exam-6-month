@@ -1,8 +1,7 @@
 import React from "react"
 import Adress from "./Address"
-import Order from "./order"
 import Footer from "../../footer"
-import Payment from "./payment"
+import Order from "./order"
 
 export default function Shop() {
   return (
@@ -12,10 +11,6 @@ export default function Shop() {
       
       <div className="flex gap-12">
         <Adress />
-        <div>
-          {/* <Order />
-          <Payment /> */}
-        </div>
       </div>
       <Footer />
     </>

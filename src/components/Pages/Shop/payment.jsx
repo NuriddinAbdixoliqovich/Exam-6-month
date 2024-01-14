@@ -13,7 +13,7 @@ export default function Payment() {
             name="paypal"
             id="paypal1" 
             value="paypal" />
-            <label for="paypal1"><img src={paypal} alt="" /></label>
+            <label htmlFor="paypal1"><img src={paypal} alt="" /></label>
         </div>
         <div className="flex gap-3 border border-[#EAEAEA] focus:border-green-400 p-2 rounded-[4px] my-4">
             <input 
@@ -21,7 +21,7 @@ export default function Payment() {
             name="paypal" 
             id="transfer2"
             value="transfer"  />
-            <label for="transfer2">Dorect bank transfer</label>
+            <label htmlFor="transfer2">Dorect bank transfer</label>
         </div>
         <div className="flex gap-3 border border-[#EAEAEA] focus:border-green-400 p-2 rounded-[4px]">
             <input 
@@ -29,7 +29,7 @@ export default function Payment() {
             name="paypal"
             id="cash3" 
             value="cash"  />
-            <label for="cash3">Cash on delivery</label>
+            <label htmlFor="cash3">Cash on delivery</label>
         </div>
 
         </fieldset>
