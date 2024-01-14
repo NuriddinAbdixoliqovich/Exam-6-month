@@ -1,0 +1,28 @@
+.footer_input{
+    position: relative;
+}
+
+.footer-btn{
+    position: absolute;
+    right: 0;
+}
+
+
+.footer_card{
+    position: relative;
+}
+
+.circleimg{
+    position: absolute;
+    top: 20px;
+}
+
+
+.footer_middle_card{
+    background: #46A3581A;
+}
+
+.icon_img{
+    border: 1px solid #46A35833;
+    
+}

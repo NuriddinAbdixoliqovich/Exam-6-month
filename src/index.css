@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url("/src/assets/fonts/CeraPro/CeraPro-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url("/src/assets/fonts/CeraPro/CeraPro-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url("/src/assets/fonts/CeraPro/CeraPro-Regular.ttf");
+  font-weight: 400;
+}
+
+
+
+body{
+  max-width: 1200px;
+  margin: 0 auto;
+  /* font-family: 'Cera Pro'; */
+}
